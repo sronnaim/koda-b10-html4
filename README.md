@@ -14,4 +14,4 @@ Layouting with clear HTML semantics illustration using table Element, CSS Flexbo
 
 ### CSS Grid Preview
 
-![HTML Clear Semantics Layouting: with Flexbox](/flex-preview.png)
+![HTML Clear Semantics Layouting: with Flexbox](/grid-preview.png)

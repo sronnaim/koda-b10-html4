@@ -7,34 +7,34 @@
     <meta name="description" content="Layouting with clear HTML semantics illustrated">
 
     <style>
+        .ill-head {
+            color: green;
+        }
+
+        .ill-nav {
+            color: blue;
+        }
+
+        .ill-sect {
+            color: purple;
+        }
+
+        .ill-art {
+            color: turquoise;
+        }
+
+        .ill-aside {
+            color: khaki
+        }
+
+        .ill-foot {
+            color: red;
+        }
+
         .ill-flex {
             display: flex;
             flex-direction: column;
             width: 14rem;
-
-            .ill-head {
-                color: green;
-            }
-
-            .ill-nav {
-                color: blue;
-            }
-
-            .ill-sect {
-                color: purple;
-            }
-
-            .ill-art {
-                color: turquoise;
-            }
-
-            .ill-aside {
-                color: khaki
-            }
-
-            .ill-foot {
-                color: red;
-            }
 
             & > div {
                 padding: 1rem;
@@ -72,6 +72,39 @@
                 }
             }
         }
+
+        /* ================================Grid======================== */
+        .ill-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            width: 14rem;
+
+
+            & > * {
+                padding: 1rem;
+                text-align: center;
+                grid-column: span 3;
+                display: grid;
+                align-items: center;
+                border: 1px solid black;
+                border-bottom: 0;
+            }
+
+            & > :nth-child(3), & > :nth-child(5) {
+                grid-column: span 2;
+                border-right: 0;
+            }
+            & > :nth-child(4) {
+                grid-column: span 1;
+                grid-row: span 2;
+            }
+
+            & > :last-child {
+                border-bottom: 1px solid black;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -79,7 +112,7 @@
         <h1>HTML Semantics Layouting Illustration</h1>
         <article>
             <h2>Using table Element</h2>
-            <table border="1" width="350">
+            <table border="1" width="230px">
                 <thead>
                     <tr>
                         <td scope="col" colspan="8" height="60" align="center"><font color="green">&lt;header&gt;</font></th>
@@ -116,6 +149,17 @@
                     </div>
                     <div class="ill-aside">&lt;aside&gt;</div>
                 </div>
+                <div class="ill-foot">&lt;footer&gt;</div>
+            </div>
+        </article>
+        <article>
+            <h2>Using CSS Grid</h2>
+            <div class="ill-grid">
+                <div class="ill-head">&lt;header&gt;</div>
+                <div class="ill-nav">&lt;nav&gt;</div>
+                <div class="ill-sect">&lt;section&gt;</div>
+                <div class="ill-aside">&lt;aside&gt;</div>
+                <div class="ill-art">&lt;article&gt;</div>
                 <div class="ill-foot">&lt;footer&gt;</div>
             </div>
         </article>
