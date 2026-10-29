@@ -5,11 +5,80 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Semantics HTML Illustrated</title>
     <meta name="description" content="Layouting with clear HTML semantics illustrated">
+
+    <style>
+        .ill-flex {
+            display: flex;
+            flex-direction: column;
+            width: 14rem;
+
+            .ill-head {
+                color: green;
+            }
+
+            .ill-nav {
+                color: blue;
+            }
+
+            .ill-sect {
+                color: purple;
+            }
+
+            .ill-art {
+                color: turquoise;
+            }
+
+            .ill-aside {
+                color: khaki
+            }
+
+            .ill-foot {
+                color: red;
+            }
+
+            & > div {
+                padding: 1rem;
+                text-align: center;
+                border: 1px solid black;
+                border-top: 1px solid black;
+                border-bottom: 0;
+            }
+
+            & > :last-child {
+                border-bottom: 1px solid black;
+            }
+            
+            & > :nth-child(3){
+                display: flex;
+                padding: 0;
+
+                & > :nth-child(1) {
+                    flex-grow: 1;
+
+                    & > :first-child {
+                        border-bottom: 1px solid black;
+                    }
+
+                    & > * { 
+                        padding: 1rem 0;
+                    }
+                }
+
+                & > :last-child {
+                    display: flex;
+                    align-items: center;
+                    border-left: 1px solid black;
+                    padding: 0 1rem;
+                }
+            }
+        }
+    </style>
 </head>
 <body>
     <main>
+        <h1>HTML Semantics Layouting Illustration</h1>
         <article>
-            <h1>HTML Semantics Layouting Illustration</h1>
+            <h2>Using table Element</h2>
             <table border="1" width="350">
                 <thead>
                     <tr>
@@ -34,6 +103,21 @@
                     </tr>
                 </tfoot>
             </table>
+        </article>
+        <article>
+            <h2>Using Flexbox</h2>
+            <div class="ill-flex">
+                <div class="ill-head">&lt;header&gt;</div>
+                <div class="ill-nav">&lt;nav&gt;</div>
+                <div>
+                    <div>
+                        <div class="ill-sect">&lt;section&gt;</div>
+                        <div class="ill-art">&lt;article&gt;</div>
+                    </div>
+                    <div class="ill-aside">&lt;aside&gt;</div>
+                </div>
+                <div class="ill-foot">&lt;footer&gt;</div>
+            </div>
         </article>
     </main>
 </body>
